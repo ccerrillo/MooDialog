@@ -33,6 +33,7 @@ MooDialog.implement('options', {
 	onBeforeOpen: function(wrapper){
 		this.overlay.open();
 		this.fx.start(1).chain(function(){
+			wrapper.setStyle('display','');
 			this.fireEvent('show');
 		}.bind(this));
 	},
@@ -41,6 +42,7 @@ MooDialog.implement('options', {
 		this.overlay.close();
 		this.fx.start(0).chain(function(){
 			this.fireEvent('hide');
+			wrapper.setStyle('display','none');
 		}.bind(this));
 	}
 
